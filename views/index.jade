@@ -1,0 +1,25 @@
+//- dependencies
+include partial
+
+//- data
+- data = { text: 'Hello World', value: 'Some value' }
+
+//- markup
+doctype
+html
+    head
+        title Jade Mixin Example
+
+    body
+        h1 Jade Mixin Example
+        hr
+
+        h2 This is what I expect (injected directly on the jade file)
+        div(itemscope) #{data.text}
+        input(type='text', value=data.value, required)
+        br
+        br
+        hr
+
+        h2 This is what I get from a mixin (wrong)
+        +partial(data)
